@@ -1,10 +1,15 @@
 package exo3;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.Queue;
 
-public class BagOfTaskImpl implements BagOfTasks {
+public class BagOfTaskImpl extends UnicastRemoteObject implements BagOfTasks {
 
     Queue<Task> tasks;
+
+    protected BagOfTaskImpl() throws RemoteException {
+    }
 
     @Override
     public Task nextTask() {
